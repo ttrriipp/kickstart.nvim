@@ -16,11 +16,19 @@ return {
       terminalColors = true,
       colors = {
         palette = {},
-        theme = { wave = {}, lotus = {}, dragon = {}, all = {
-          ui = {
-            bg_gutter = 'none',
+        theme = {
+          wave = {},
+          lotus = {},
+          dragon = {},
+          all = {
+            ui = {
+              bg_gutter = 'none',
+              float = {
+                bg = 'none',
+              },
+            },
           },
-        } },
+        },
       },
       overrides = function(colors)
         local theme = colors.theme
@@ -30,17 +38,14 @@ return {
         end
 
         return {
-          Pmenu = { fg = theme.ui.shade0, bg = theme.ui.bg_p1 }, -- add `blend = vim.o.pumblend` to enable transparency
-          PmenuSel = { fg = 'NONE', bg = theme.ui.bg_p2 },
-          PmenuSbar = { bg = theme.ui.bg_m1 },
-          PmenuThumb = { bg = theme.ui.bg_p2 },
+          Pmenu = { fg = theme.ui.shade0, bg = theme.ui.bg_p1, blend = vim.o.pumblend }, -- add `blend = vim.o.pumblend` to enable transparency
+          PmenuSel = { fg = 'NONE', bg = theme.ui.bg_p2, blend = vim.o.pumblend },
+          PmenuSbar = { bg = theme.ui.bg_m1, blend = vim.o.pumblend },
+          PmenuThumb = { bg = theme.ui.bg_p2, blend = vim.o.pumblend },
           NormalFloat = { bg = 'none' },
           FloatBorder = { bg = 'none' },
           FloatTitle = { bg = 'none' },
 
-          NormalDark = { fg = theme.ui.fg_dim, bg = theme.ui.bg_m3 },
-          LazyNormal = { bg = theme.ui.bg_m3, fg = theme.ui.fg_dim },
-          MasonNormal = { bg = theme.ui.bg_m3, fg = theme.ui.fg_dim },
           DiagnosticVirtualTextHint = makeDiagnosticColor(theme.diag.hint),
           DiagnosticVirtualTextInfo = makeDiagnosticColor(theme.diag.info),
           DiagnosticVirtualTextWarn = makeDiagnosticColor(theme.diag.warning),
