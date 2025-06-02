@@ -22,5 +22,12 @@ return {
       end,
       desc = 'Select Scratch Buffer',
     },
+    {
+      '<leader>bd',
+      function()
+        Snacks.bufdelete()
+      end,
+      desc = 'Delete Buffer',
+    },
   },
 }
