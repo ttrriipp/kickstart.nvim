@@ -24,4 +24,6 @@ require('lazy').setup {
   require 'trip.plugins.snacks',
 
   require 'trip.plugins.lua-line',
+
+  require 'trip.plugins.noice',
 }

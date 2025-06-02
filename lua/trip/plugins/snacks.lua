@@ -1,6 +1,12 @@
 return {
-  'folke/snacks.nvim',
   ---@type snacks.Config
+  'folke/snacks.nvim',
+  priority = 1000,
+  lazy = false,
+  opts = {
+    bigfile = { enabled = true },
+    quickfile = { enabled = true },
+  },
   keys = {
     {
       '<leader>.',
