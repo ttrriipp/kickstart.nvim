@@ -28,10 +28,11 @@ return {
           map('gri', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementation')
           map('grd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
           map('grD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
-          map('gO', require('telescope.builtin').lsp_document_symbols, 'Open Document Symbols')
           map('gW', require('telescope.builtin').lsp_dynamic_workspace_symbols, 'Open Workspace Symbols')
+          map('gO', require('telescope.builtin').lsp_document_symbols, 'Open Document Symbols')
           map('grt', require('telescope.builtin').lsp_type_definitions, '[G]oto [T]ype Definition')
 
+          -- nightly stuff
           ---@param client vim.lsp.Client
           ---@param method vim.lsp.protocol.Method
           ---@param bufnr? integer some lsp support methods only in specific files
@@ -44,6 +45,7 @@ return {
             end
           end
 
+          -- highlight stuff
           local client = vim.lsp.get_client_by_id(event.data.client_id)
           if client and client_supports_method(client, vim.lsp.protocol.Methods.textDocument_documentHighlight, event.buf) then
             local highlight_augroup = vim.api.nvim_create_augroup('kickstart-lsp-highlight', { clear = false })
@@ -130,7 +132,6 @@ return {
           end,
         },
       }
-      vim.cmd 'highlight FloatBorder guibg=NONE'
     end,
   },
 }

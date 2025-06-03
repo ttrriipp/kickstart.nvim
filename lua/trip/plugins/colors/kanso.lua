@@ -4,6 +4,7 @@ return {
   priority = 1000,
   config = function()
     require('kanso').setup {
+      italics = false,
       transparent = true,
       colors = {
         pallete = {

@@ -19,11 +19,11 @@ require('lazy').setup {
 
   require 'trip.plugins.colors',
 
-  require 'trip.plugins.zen-mode',
-
   require 'trip.plugins.snacks',
 
   require 'trip.plugins.lua-line',
 
-  require 'trip.plugins.noice',
+  require 'trip.plugins.vim-tmux',
+
+  require 'trip.plugins.harpoon',
 }
