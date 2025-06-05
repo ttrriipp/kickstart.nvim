@@ -5,7 +5,6 @@ return {
   lazy = false,
   opts = {
     bigfile = { enabled = true },
-    quickfile = { enabled = true },
   },
   keys = {
     {
